@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lemonheadz Copyright License</title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(160deg, #b58cff 0%, #e2d4ff 100%);
+  overflow: hidden;
+  color: #222;
+  user-select: none;
+}
+
+/* Canvas background */
+#renderCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background: transparent;
+}
+
+/* Main content */
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.logo img {
+  width: 120px;
+  max-width: 25vw;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.1) rotate(3deg);
+  cursor: pointer;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+  color: #7b3eff;
+  text-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+/* Liquid glass license card */
+.license-card {
+  max-width: 800px;
+  width: 90%;
+  max-height: 65vh;
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px) saturate(180%) contrast(120%);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+  text-align: left;
+  overflow-y: auto;
+  animation: floatCard 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+.license-card h2 {
+  margin-top: 0;
+  color: #222;
+  font-size: 1.5rem;
+  text-shadow: 0 0 3px rgba(255,255,255,0.5);
+}
+
+.license-card p, .license-card li {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin-bottom: 0.75rem;
+  color: #222;
+}
+
+.license-card ul { padding-left: 1.5rem; }
+
+.subtle {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Center button container */
+.button-container {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+/* Link button */
+a {
+  background-color: #7b3eff;
+  color: white;
+  padding: 0.85rem 1.8rem;
+  border-radius: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  user-select: none;
+  box-shadow: 0 6px 15px rgba(123, 62, 255, 0.6);
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+a:hover, a:focus {
+  background-color: #5e2ecc;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(94, 46, 204, 0.85);
+}
+a:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(94, 46, 204, 0.7);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  .license-card { padding: 1.5rem; max-height: 60vh; }
+  .license-card h2 { font-size: 1.3rem; }
+  .license-card p, .license-card li { font-size: 0.95rem; line-height: 1.4rem; }
+}
+</style>
+</head>
+<body>
+<canvas id="renderCanvas"></canvas>
+
+<div class="content">
+  <div class="logo">
+    <!-- replace src with your lemonheadz logo -->
+    <img src="your-logo.png" alt="Lemonheadz Logo" />
+  </div>
+  <h1>Lemonheadz License v1.0</h1>
+  <div class="license-card">
+    <h2>Copyright © 2025 — Lemonheadz</h2>
+    <p><strong>Owned by:</strong> Alfie Sid Alan Terry, Isabelle Fisher, Maisie Rose Hill, Keira</p>
+    <p>All original works created under the name <em>Lemonheadz</em> — music, lyrics, recordings, artwork, performances, and promotional material — are jointly owned by the listed members.</p>
+    <ul>
+      <li><strong>Personal use:</strong> Fans can share music, art, and clips for non-commercial purposes with credit to Lemonheadz.</li>
+      <li><strong>Prohibited use:</strong> No copying, selling, distributing, or remixing for commercial use without written permission.</li>
+      <li><strong>Licensing:</strong> Commercial use (covers, sync, merch, samples) requires written permission from all owners.</li>
+    </ul>
+    <h2>Fan-Friendly Notes</h2>
+    <ul>
+      <li>Post show clips + tag us — we’ll probably repost 💜</li>
+      <li>Fan art + edits are welcome with credit</li>
+      <li>Spread our music wherever you vibe with it — just don’t sell or claim it</li>
+    </ul>
+    <br>
+    <div class="button-container">
+      <a href="/" role="button">Back to Home</a>
+    </div>
+    <p class="subtle">© Lemonheadz, all rights reserved.</p>
+  </div>
+</div>
+
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script>
+const canvas = document.getElementById('renderCanvas');
+const engine = new BABYLON.Engine(canvas, true);
+
+const createScene = () => {
+  const scene = new BABYLON.Scene(engine);
+  scene.clearColor = new BABYLON.Color4(0,0,0,0);
+
+  const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI/2, Math.PI/2.7, 8, BABYLON.Vector3.Zero(), scene);
+  camera.attachControl(canvas, true);
+  camera.lowerRadiusLimit = 5;
+  camera.upperRadiusLimit = 12;
+
+  const hemiLight = new BABYLON.HemisphericLight("hemi", new BABYLON.Vector3(0,1,0), scene);
+  hemiLight.intensity = 0.8;
+
+  const dirLight = new BABYLON.DirectionalLight("dir", new BABYLON.Vector3(-1,-2,-1), scene);
+  dirLight.position = new BABYLON.Vector3(20,40,20);
+  dirLight.intensity = 1.2;
+
+  // a sphere with a trippy purple texture
+  const orb = BABYLON.MeshBuilder.CreateSphere("orb", {diameter:4, segments:64}, scene);
+  const orbMat = new BABYLON.StandardMaterial("orbMat", scene);
+  orbMat.diffuseColor = new BABYLON.Color3(0.5,0.2,0.8);
+  orbMat.emissiveColor = new BABYLON.Color3(0.3,0.1,0.6);
+  orb.material = orbMat;
+
+  scene.registerBeforeRender(() => { orb.rotation.y += 0.0025; });
+
+  return scene;
+};
+
+const scene = createScene();
+engine.runRenderLoop(() => { scene.render(); });
+window.addEventListener("resize", () => { engine.resize(); });
+</script>
+</body>
+</html>
